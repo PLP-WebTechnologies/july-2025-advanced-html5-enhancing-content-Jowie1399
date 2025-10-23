@@ -1,0 +1,219 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Enhanced Form — HTML5 Practice</title>
+  <meta name="description" content="A multi-section HTML5 page demonstrating lists, tables, media embedding and a fully validated HTML5 form using semantic markup and accessibility best practices.">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>  <header role="banner" aria-label="Page header">
+    <h1>Enhanced Form &amp; Content Demo</h1>
+    <p>Demonstrates lists, tables, media, and a complete HTML5 form with native validation and accessibility features.</p>
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#data-table">Data Table</a></li>
+        <li><a href="#signup">Sign-up Form</a></li>
+      </ul>
+    </nav>
+  </header>  <main id="main" role="main">
+    <article aria-labelledby="overview-heading">
+      <h2 id="overview-heading">Overview</h2>
+      <p>This page contains organized content using lists and tables, embedded media (image, audio, video), and a complete semantic form that uses only HTML5 validation attributes.</p><section id="features" aria-labelledby="features-heading">
+    <h3 id="features-heading">Key Features</h3>
+    <ol>
+      <li>Semantic structure for accessibility (header, nav, main, section, article, footer).</li>
+      <li>Use of lists and a well-scoped table to present tabular data.</li>
+      <li>Embedded media elements with descriptive text and captions.</li>
+      <li>A complete form using labels, fieldsets, and HTML5 validation attributes.</li>
+    </ol>
+  </section>
+
+  <section id="media" aria-labelledby="media-heading">
+    <h3 id="media-heading">Media Examples</h3>
+
+    <figure>
+      <img src="https://via.placeholder.com/800x450.png?text=Sample+Image" alt="Sample scenic placeholder image showing a coast and sky" width="800" height="450">
+      <figcaption>Figure 1 — A descriptive caption for the illustrative image.</figcaption>
+    </figure>
+
+    <figure>
+      <figcaption>Audio example — short spoken welcome</figcaption>
+      <audio controls>
+        <source src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/audio/sample.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </figure>
+
+    <figure>
+      <figcaption>Video example — accessible video with captions</figcaption>
+      <video controls width="640" height="360" preload="metadata">
+        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+        Your browser does not support the video element.
+      </video>
+    </figure>
+
+  </section>
+
+  <section id="data-table" aria-labelledby="table-heading">
+    <h3 id="table-heading">Sample Data Table</h3>
+    <p>The table below uses a caption and appropriate scope attributes for accessibility.</p>
+    <table>
+      <caption>Monthly subscription plan features comparison</caption>
+      <thead>
+        <tr>
+          <th scope="col">Plan</th>
+          <th scope="col">Price (USD)</th>
+          <th scope="col">Max Users</th>
+          <th scope="col">Storage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Starter</th>
+          <td>5</td>
+          <td>1</td>
+          <td>5 GB</td>
+        </tr>
+        <tr>
+          <th scope="row">Team</th>
+          <td>15</td>
+          <td>5</td>
+          <td>50 GB</td>
+        </tr>
+        <tr>
+          <th scope="row">Business</th>
+          <td>45</td>
+          <td>Unlimited</td>
+          <td>500 GB</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</article>
+
+<article id="signup" aria-labelledby="signup-heading">
+  <h2 id="signup-heading">Complete HTML5 Form</h2>
+  <p>This form demonstrates accessible grouping, a wide range of input types, and native HTML5 validation. No JavaScript is used for validation.</p>
+
+  <form action="#" method="post" novalidate="false" aria-describedby="form-instructions">
+    <p id="form-instructions">Please complete the fields below. Required fields are marked with an asterisk (<strong>*</strong>).</p>
+
+    <fieldset>
+      <legend>Personal Information</legend>
+
+      <div>
+        <label for="fullname">Full name <strong>*</strong></label>
+        <input id="fullname" name="fullname" type="text" required placeholder="e.g. John Doe" minlength="3" autocomplete="name" aria-required="true">
+      </div>
+
+      <div>
+        <label for="email">Email address <strong>*</strong></label>
+        <input id="email" name="email" type="email" required placeholder="name@example.com" autocomplete="email" aria-required="true">
+      </div>
+
+      <div>
+        <label for="phone">Phone number</label>
+        <input id="phone" name="phone" type="tel" placeholder="+254701234567" pattern="\+?[0-9\s\-]{7,20}" autocomplete="tel" title="Enter phone number with country code, e.g. +254701234567">
+      </div>
+
+      <div>
+        <label for="dob">Date of birth</label>
+        <input id="dob" name="dob" type="date" max="2007-12-31" autocomplete="bday">
+        <small>Users must be born on or before December 31, 2007 (example age restriction).</small>
+      </div>
+
+    </fieldset>
+
+    <fieldset>
+      <legend>Account Details</legend>
+
+      <div>
+        <label for="username">Username <strong>*</strong></label>
+        <input id="username" name="username" type="text" required minlength="4" maxlength="20" pattern="[A-Za-z0-9._-]{4,20}" placeholder="username123" autocomplete="username" aria-required="true" title="4-20 characters: letters, numbers, dot, underscore or hyphen">
+      </div>
+
+      <div>
+        <label for="password">Password <strong>*</strong></label>
+        <input id="password" name="password" type="password" required minlength="8" pattern="(?=^.{8,}$)(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).*" placeholder="At least 8 characters, include uppercase & number" aria-required="true" title="Minimum 8 characters, at least one uppercase letter and one number">
+      </div>
+
+      <div>
+        <label for="website">Website</label>
+        <input id="website" name="website" type="url" placeholder="https://example.com" autocomplete="url" pattern="https?://.+">
+      </div>
+
+    </fieldset>
+
+    <fieldset>
+      <legend>Preferences &amp; Permissions</legend>
+
+      <div>
+        <p>Subscription plan <strong>*</strong></p>
+        <select id="plan" name="plan" required aria-required="true">
+          <option value="">Choose a plan</option>
+          <option value="starter">Starter</option>
+          <option value="team">Team</option>
+          <option value="business">Business</option>
+        </select>
+      </div>
+
+      <div>
+        <p>Contact preference</p>
+        <label><input type="radio" name="contact_pref" value="email" checked> Email</label>
+        <label><input type="radio" name="contact_pref" value="phone"> Phone</label>
+        <label><input type="radio" name="contact_pref" value="none"> Do not contact</label>
+      </div>
+
+      <div>
+        <label><input type="checkbox" name="terms" required aria-required="true"> I agree to the terms and conditions <strong>*</strong></label>
+      </div>
+
+    </fieldset>
+
+    <fieldset>
+      <legend>Additional Details</legend>
+
+      <div>
+        <label for="bio">Short bio</label>
+        <textarea id="bio" name="bio" rows="4" minlength="20" placeholder="Tell us a bit about yourself (min 20 characters)" aria-describedby="bio-help"></textarea>
+        <small id="bio-help">Optional, but recommended. Minimum 20 characters if provided.</small>
+      </div>
+
+      <div>
+        <label for="age">Age (read-only sample)</label>
+        <input id="age" name="age" type="number" min="0" max="120" value="30" readonly aria-readonly="true">
+        <small>Example of a read-only numeric field.</small>
+      </div>
+
+      <div>
+        <label for="profile-pic">Profile picture (optional)</label>
+        <input id="profile-pic" name="profile-pic" type="file" accept="image/*" aria-describedby="file-help">
+        <small id="file-help">Accepted types: images. Max file size not enforced by HTML.</small>
+      </div>
+
+    </fieldset>
+
+    <div>
+      <button type="submit">Create account</button>
+      <button type="reset">Reset form</button>
+    </div>
+
+  </form>
+
+</article>
+
+  </main>  <footer role="contentinfo" aria-label="Page footer">
+    <p>&copy; 2025 Enhanced Form Demo — Educational use only.</p>
+    <nav aria-label="Footer links">
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#signup">Sign-up Form</a></li>
+      </ul>
+    </nav>
+  </footer></body>
+</html>
